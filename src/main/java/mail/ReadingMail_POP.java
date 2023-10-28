@@ -13,9 +13,9 @@ import jakarta.mail.PasswordAuthentication;
 import jakarta.mail.Session;
 import jakarta.mail.internet.AddressException;
 
-public class ReadingMail {
-	static String username = "a5ed720e3bb8b9";
-	static String password = "a1be86f7b4a1e7";
+public class ReadingMail_POP {
+	static String username = "5bb79c7519cb08";
+	static String password = "3f1075a4cd7483";
 
 	public static Properties getProperties() {
 		Properties prop = new Properties();

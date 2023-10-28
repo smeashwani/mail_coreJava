@@ -1,7 +1,5 @@
 package mail;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.Properties;
 
 import jakarta.mail.Authenticator;
@@ -17,10 +15,10 @@ import jakarta.mail.internet.MimeBodyPart;
 import jakarta.mail.internet.MimeMessage;
 import jakarta.mail.internet.MimeMultipart;
 
-public class SendingMailWithAttachment {
+public class SendingMail_SMTP {
 
-	static String username="a5ed720e3bb8b9";
-	static String password="a1be86f7b4a1e7";
+	static String username="5bb79c7519cb08";
+	static String password="3f1075a4cd7483";
 
 	public static Properties getProperties() {
 		Properties prop = new Properties();
@@ -41,18 +39,18 @@ public class SendingMailWithAttachment {
 		});
 	}
 	
-	public static void main(String[] args) throws AddressException, MessagingException, IOException {
+	public static void main(String[] args) throws AddressException, MessagingException {
 		Message message = new MimeMessage(getSession());
 		message.setFrom(new InternetAddress("from@gmail.com"));
 		message.setRecipients(
 		  Message.RecipientType.TO, InternetAddress.parse("to@gmail.com"));
 		message.setSubject("Mail Subject");
 
-		String msg = "This is my first email using JavaMailer";
+		//String msg = "This is my first email using JavaMailer";
+		String msg = "This is my <b style='color:red;'>bold-red email</b> using JavaMailer";
 
 		MimeBodyPart mimeBodyPart = new MimeBodyPart();
 		mimeBodyPart.setContent(msg, "text/html; charset=utf-8");
-		mimeBodyPart.attachFile(new File("pom.xml"));
 
 		Multipart multipart = new MimeMultipart();
 		multipart.addBodyPart(mimeBodyPart);
